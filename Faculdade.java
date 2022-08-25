@@ -13,8 +13,8 @@ public class Faculdade {
   public float mediaAprovacao() {
     float alunosAprovados = 0;
 
-    for (int i = 0; i < alunos.length; i++) {
-      if (alunos[i].aprovado) {
+    for (Aluno aluno : alunos) {
+      if (aluno != null && aluno.aprovado) {
         alunosAprovados++;
       }
     }
@@ -25,8 +25,8 @@ public class Faculdade {
   public int alunoSuperiorP5() {
     int alunosSuperiorP5 = 0;
 
-    for (int i = 0; i < alunos.length; i++) {
-      if (alunos[i].periodo >= 5) {
+    for (Aluno aluno : alunos) {
+      if (aluno != null && aluno.periodo >= 5) {
         alunosSuperiorP5++;
       }
     }
@@ -38,8 +38,18 @@ public class Faculdade {
     System.out.println("Nome: " + this.nome);
     System.out.println("CNPJ: " + this.CNPJ);
 
+    System.out.println();
+
+    System.out.println("Curso: " + this.curso.nome);
+    System.out.println("Sigla: " + this.curso.sigla);
+
+    System.out.println();
+
     for (Aluno aluno : alunos) {
-      aluno.mostraInfo();
+      if (aluno != null) {
+        aluno.mostraInfo();
+        System.out.println();
+      }
     }
   }
 }

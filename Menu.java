@@ -26,20 +26,31 @@ public class Menu {
     System.out.println("5) SAIR");
 
     int option = scanner.nextInt();
+    scanner.nextLine();
 
     while (option != 5){
       switch (option) {
         case 1:
-          String nome = scanner.nextLine();
-          String matricula = scanner.nextLine();
+          Aluno novoAluno = new Aluno();
+
+          System.out.println("Qual o nome do aluno?");
+          novoAluno.nome = scanner.nextLine();
+
+          System.out.println("Qual a idade?");
+          novoAluno.idade = scanner.nextInt();
+
+          scanner.nextLine();
+
+          System.out.println("Qual a matricula?");
+          novoAluno.matricula = scanner.nextLine();
+
+          System.out.println("Qual o periodo?");
+          novoAluno.periodo = scanner.nextInt();
   
-          int idade = scanner.nextInt();
-          int periodo = scanner.nextInt();
+          System.out.println("Ele foi aprovado?");
+          novoAluno.aprovado = scanner.nextBoolean();
   
-          boolean aprovado = scanner.nextBoolean();
-  
-          faculdade.addAluno(
-            new Aluno(nome, matricula, idade, periodo, aprovado));
+          faculdade.addAluno(novoAluno);
         break;
   
         case 2:
@@ -63,6 +74,7 @@ public class Menu {
       System.out.println("5) SAIR");
 
       option = scanner.nextInt();
+      scanner.nextLine();
     }
 
     scanner.close();

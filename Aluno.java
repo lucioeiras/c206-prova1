@@ -5,22 +5,8 @@ public class Aluno {
   int periodo;
   boolean aprovado;
 
-  public Aluno(
-    String nome, 
-    String matricula, 
-    int idade, 
-    int periodo, 
-    boolean aprovado
-  ) {
-    this.nome = nome;
-    this.matricula = matricula;
-    this.idade = idade;
-    this.periodo = periodo;
-    this.aprovado = aprovado;
-  }
-
   public void mostraInfo() {
-    System.out.println("Nome: " + this.nome); 
+    System.out.println("Aluno: " + this.nome); 
     System.out.println("Matricula: " + this.matricula);
     System.out.println("Idade: " + this.idade); 
     System.out.println("Periodo: " + this.periodo); 
