@@ -1,13 +1,17 @@
 public class Faculdade {
   String nome;
   String CNPJ;
-  Aluno[] alunos = new Aluno[50];
+  Aluno[] alunos = new Aluno[100];
 
   Curso curso = new Curso();
 
+  int numeroDeAlunos = 0;
+
   public void addAluno(Aluno novoAluno) {
-    alunos[alunos.length - 1] = novoAluno;
+    alunos[numeroDeAlunos + 1] = novoAluno;
     this.curso.alunoMatriculado();
+
+    numeroDeAlunos++;
   }
 
   public float mediaAprovacao() {
